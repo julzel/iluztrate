@@ -1,10 +1,11 @@
 import React from 'react';
 
+const TextInput = ({ label, type, placeholder, value, handleInputChange }) => {
 
-const TextInput = () => {
   return (
     <div className="text-input">
-      ILUZTRATE
+      {label && <label>{label}</label>}
+      <input type={type} placeholder={placeholder} value={value} onChange={handleInputChange} />
     </div>
   );
 }

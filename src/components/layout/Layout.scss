@@ -1,0 +1,7 @@
+.layout {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  width: 100%;
+  max-width: 414px;
+  margin: 0 auto;
+}
