@@ -13,7 +13,7 @@ const Login = ({ history }) => {
     ev.preventDefault();
     const authUser = JSON.parse(sessionStorage.getItem('authUser'));
     if (email === authUser.email && password === authUser.password) {
-      history.push('/')
+      history.push('/home')
     }
   };
 

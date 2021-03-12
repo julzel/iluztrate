@@ -23,9 +23,9 @@ const App = () => {
       <Router>
         <Layout>
           <Switch>
-            <Route path="/login" component={Login} />
-            <Route path="/" component={Home} />
-            <Redirect to="/login" />
+            <Route path="/" component={Login} />
+            <Route path="/home" component={Home} />
+            <Redirect to="/" />
           </Switch>
         </Layout>
       </Router>
