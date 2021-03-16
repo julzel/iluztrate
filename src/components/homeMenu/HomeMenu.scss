@@ -1,0 +1,45 @@
+.home-menu {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  h3 {
+    color: #5e5e5e;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  ul {
+    width: 80%;
+    li {
+      border-radius: 20px;
+      
+      &:first-child {
+        background-color: #862820;
+      }
+
+      &:last-child {
+        background-color: #feac00;
+      }
+
+      a {
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 35px;
+        width: 100%;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-decoration: none;
+        text-transform: uppercase;
+    
+        &:visited {
+          color: white;
+        }
+      }
+    }
+  }
+}

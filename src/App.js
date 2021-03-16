@@ -11,6 +11,8 @@ import { DEFAULT_USER } from './config';
 import Home from './pages/home';
 import Layout from './components/layout';
 import './styles/global.scss';
+import NewGame from './pages/newGame';
+import MyGames from './pages/myGames';
 
 const App = () => {
 
@@ -25,6 +27,8 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Login} />
             <Route exact path="/home" component={Home} />
+            <Route exact path="/nuevo-juego" component={NewGame} />
+            <Route exact path="/mis-juegos" component={MyGames} />
             <Redirect to="/" />
           </Switch>
         </Layout>

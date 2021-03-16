@@ -7,7 +7,7 @@ const Header = () => {
     <header className="header">
       <div className="header-logo" />
       <div className="header-menu-icon">
-        <i class="fa fa-bars" />
+        <i className="fa fa-bars" />
       </div>
     </header>
   );
