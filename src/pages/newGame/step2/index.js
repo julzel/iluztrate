@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Step2 = ({ value, onCategoryChange, onNext }) => {
+const Step2 = ({ onNext }) => {
+  const [value, setValue] = useState('');
+
+  const onCategoryChange = e => setValue(e.target.value);
+
+  const onStep2Submit = e => {
+    e.preventDefault();
+    onNext(value.split(','));
+  }
   return (
-    <div className="step2">
-      <label htmlFor="gameCategory">Asígnale una categoría!</label>
-      <input type="text" onChange={onCategoryChange} value={value} placeholder="mixta, ciencias, matemáticas, estudios sociales" />
-      <button type="button" className="next" onClick={onNext}>Siguiente</button>
-    </div>
+    <form className="step step2" onSubmit={onStep2Submit}>
+      <textarea type="text" onChange={onCategoryChange} value={value} placeholder="Categoría" />
+      <button type="submit" className="next">Siguiente</button>
+    </form>
   );
 }
  

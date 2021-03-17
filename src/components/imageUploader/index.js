@@ -1,5 +1,7 @@
 import React from "react";
 
+import './ImageUploader.scss';
+
 const ImageUploader = ({id, onFileUpload}) => {
   return (
     <div className="image-uploader">
