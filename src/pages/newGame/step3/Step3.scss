@@ -1,0 +1,58 @@
+.step3 {
+  p {
+    text-align: center;
+    font-size: 30px;
+    color: white;
+    opacity: 0.4;
+  }
+
+  &-options {
+
+    div {
+      margin-top: 35px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      margin-bottom: 35px;
+    }
+
+    .option {
+      height: 120px;
+      width: 120px;
+      margin: 10px 0;
+      position: relative;
+      border: 2px solid #ca5d22;
+
+      .image-uploader {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 2;
+      }
+
+      img {
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  &-select {
+    margin-bottom: 25px;
+  }
+
+  &-confirm {
+    button {
+      margin-bottom: 15px;
+      display: block;
+      width: 100%;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
