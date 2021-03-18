@@ -38,7 +38,6 @@ const NewGame = () => {
     newGame.questions = questions;
     setNewGame({ ...newGame });
     if (final) {
-      debugger;
       setCurrentStep(currentStep + 1);
     }
   }

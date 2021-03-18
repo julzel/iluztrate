@@ -67,8 +67,6 @@ const Step3 = ({ onNext }) => {
     createQuestion();
   }
 
-  console.log(question.question)
-
   return (
     <div className="step step3">
       <form onSubmit={onFormSubmit}>
