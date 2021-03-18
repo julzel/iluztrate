@@ -9,8 +9,9 @@
 
   &-logo {
     margin-bottom: 40px;
-    img {
+    svg {
       width: 160px;
+      height: 160px;
     }
   }
 
@@ -32,17 +33,19 @@
       }
 
       button {
-        color: #862820;
+        background-color: transparent;
+        border: 1px solid white;
+        color: white;
         font-weight: bold;
         text-transform: uppercase;
       }
     }
 
     &-separator {
-      width: 100%;
+      width: 80%;
       height: 1px;
-      background-color: #dcdcdc;
-      margin: 15px 0;
+      background-color: white;
+      margin: 50px auto;
     }
   }
 }

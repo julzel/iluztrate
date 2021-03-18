@@ -17,7 +17,7 @@ import MyGames from './pages/myGames';
 const App = () => {
 
   useEffect(() => {
-    sessionStorage.setItem('authUser', JSON.stringify(DEFAULT_USER))
+    sessionStorage.setItem('authUser', JSON.stringify(DEFAULT_USER));
   }, [])
 
   return (

@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import Svg from 'react-inlinesvg';
+
 import Button from '../../components/button';
 import TextInput from '../../components/textInput';
 import './Login.scss';
-import Logo from '../../assets/iluztrate_logo.jpg';
+import Logo from '../../assets/logo_white.svg';
 
 const Login = ({ history }) => {
 
@@ -24,7 +26,7 @@ const Login = ({ history }) => {
   return (
     <div className="login">
       <div className="login-logo">
-        <img src={Logo} alt="iluztrate logo" />
+        <Svg src={Logo} />
       </div>
       <form className="login-form" onSubmit={handleSubmit}>
         <div className="login-form-block">

@@ -27,6 +27,7 @@
     background-color: transparent;
     padding-left: 0;
     margin: 50px 0 100px 0;
+    text-align: center;
   }
 
   .myPlaceholderClassName {
@@ -78,10 +79,14 @@
   }
 
   .next {
-    font-family: 'Lato';
-    display: block;
-    width: 100%;
-    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.1);
+    // border: 1px solid white;
+    border-radius: 20px;
     color: white;
+    display: block;
+    font-size: 16px;
+    height: 35px;
+    width: 100%;
+    margin: 0 auto;
   }
 }

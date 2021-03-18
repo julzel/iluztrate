@@ -8,8 +8,9 @@ const HomeMenu = () => {
     <div className="home-menu">
       <h3>Acceso Rápido</h3>
       <ul>
-        <li><Link to="/nuevo-juego"> Nuevo Juego</Link></li>
+        <li><Link to="/nuevo-juego"> Nuevo juego</Link></li>
         <li><Link to="/mis-juegos">Mis juegos</Link></li>
+        <li><Link to="/">Cerrar sesión</Link></li>
       </ul>
     </div>
   );
