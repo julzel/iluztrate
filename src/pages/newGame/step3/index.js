@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 
@@ -39,6 +39,7 @@ const Step3 = ({ onNext }) => {
   };
 
   const createQuestion = finalQuestion => {
+    newQuestionDefault.answerOptions = [];
     questions.push(question);
     setQuestions([...questions]);
     setQuestion({ ...newQuestionDefault });
@@ -60,12 +61,18 @@ const Step3 = ({ onNext }) => {
     setQuestion({ ...question });
   };
 
-  const onTimeSelect = (ev) => console.log(ev);
+  const onTimeSelect = selectedOption => {
+    question.time = selectedOption.value;
+    setQuestion({ ...question });
+  }
 
   const onFormSubmit = ev => {
     ev.preventDefault();
     createQuestion();
   }
+
+  useEffect(() => console.log(question), [question])
+
 
   return (
     <div className="step step3">
@@ -89,6 +96,7 @@ const Step3 = ({ onNext }) => {
                   id={`option${i}`}
                   onFileUpload={(ev) => onOptionChange(ev, option)}
                 />
+                <i className="fa fa-image" />
                 <img
                   src={null}
                   alt={`respuesta ${i + 1}`}

@@ -9,33 +9,45 @@
   &-options {
 
     div {
-      margin-top: 35px;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      margin-bottom: 35px;
+      margin-bottom: 8.5158150852vw;
+      margin-top: 8.5158150852vw;
     }
 
     .option {
-      height: 120px;
-      width: 120px;
-      margin: 10px 0;
+      height: 42.579vw;
+      max-height: 175px;
+      width: 42.579vw;
+      max-width: 175px;
+      margin: 2vw 0;
       position: relative;
-      border: 2px solid #ca5d22;
+      border: 5px solid rgba(0, 0, 0, 0.2);
 
       .image-uploader {
         position: absolute;
         left: 0;
         top: 0;
-        z-index: 2;
+        z-index: 3;
       }
 
       img {
-        z-index: 1;
+        z-index: 2;
         position: absolute;
         left: 0;
         top: 0;
         width: 100%;
+      }
+
+      i {
+        color: rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 15vw;
       }
     }
   }
@@ -46,6 +58,7 @@
 
   &-confirm {
     .next {
+      font-size: 18px;
       margin-bottom: 25px !important;
       display: block;
       width: 100%;

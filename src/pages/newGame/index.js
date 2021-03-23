@@ -6,6 +6,7 @@ import Step1 from './step1';
 import Step2 from './step2';
 import Step3 from './step3';
 import './NewGame.scss';
+import Step4 from './step4';
 
 const COLORS = ["#ec9a29", "#7e935b", "#a8201a", "#ca5d22"];
 
@@ -38,6 +39,13 @@ const NewGame = () => {
     newGame.questions = questions;
     setNewGame({ ...newGame });
     if (final) {
+      let games = JSON.parse(sessionStorage.getItem('gamesList'));
+      if (games) {
+        games.push(newGame)
+      } else {
+        games = [newGame]
+      }
+      sessionStorage.setItem('games', JSON.stringify(games));
       setCurrentStep(currentStep + 1);
     }
   }
@@ -48,23 +56,7 @@ const NewGame = () => {
       {currentStep === 0 && <Step1 onNext={onStep1Next} />}
       {currentStep === 1 && <Step2 onNext={onStep2Next} />}
       {currentStep === 2 && <Step3 onNext={onStep3Next} />}
-      {currentStep === 3 && (
-        <div>
-          <h1>{newGame.name}</h1>
-          <h2>{newGame.categories}</h2>
-          <p>Preguntas totales: {newGame.questions.totalQuestions}</p>
-          {newGame.questions.questions.map((question, i) => (
-            <div key={`question_${i}`}>
-              <p>{question.question}</p>
-              {question.answerOptions.map(option => (
-                <div>
-                  <img src={option} alt="respuesta" />
-                </div>
-              ))}
-            </div>
-          ))}
-        </div>
-      )}
+      {currentStep === 3 && <Step4 gameReview={newGame} />}
     </div>
   );
 }

@@ -7,7 +7,7 @@ import ColorLogo from '../../assets/logo_colores.svg';
 
 const Header = ({ colorLogo }) => {
   return (
-    <header className="header">
+    <header className={`header${colorLogo ? ' no-bg' : ''}`}>
       <div className="header-logo">
         <Svg src={colorLogo ? ColorLogo : Logo} />
       </div>
