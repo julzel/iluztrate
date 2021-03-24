@@ -13,7 +13,7 @@ const Login = ({ history }) => {
 
   const handleSubmit = ev => {
     ev.preventDefault();
-    const authUser = JSON.parse(sessionStorage.getItem('authUser'));
+    const authUser = JSON.parse(localStorage.getItem('authUser'));
     if (email === authUser.email && password === authUser.password) {
       history.push('/home')
     }

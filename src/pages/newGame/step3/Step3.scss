@@ -1,4 +1,7 @@
 .step3 {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
   p {
     text-align: center;
     font-size: 30px;
@@ -12,8 +15,6 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-      margin-bottom: 8.5158150852vw;
-      margin-top: 8.5158150852vw;
     }
 
     .option {
@@ -54,9 +55,7 @@
 
   &-select {
     margin-bottom: 25px;
-  }
-
-  &-confirm {
+    
     .next {
       font-size: 18px;
       margin-bottom: 25px !important;

@@ -39,13 +39,13 @@ const NewGame = () => {
     newGame.questions = questions;
     setNewGame({ ...newGame });
     if (final) {
-      let games = JSON.parse(sessionStorage.getItem('games'));
+      let games = JSON.parse(localStorage.getItem('games'));
       if (games) {
         games.push(newGame)
       } else {
         games = [newGame]
       }
-      sessionStorage.setItem('games', JSON.stringify(games));
+      localStorage.setItem('games', JSON.stringify(games));
       setCurrentStep(currentStep + 1);
     }
   }

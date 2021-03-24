@@ -115,9 +115,6 @@ const Step3 = ({ onNext }) => {
             value={defaultOption}
             placeholder="Selecciona el tiempo"
           />
-          <button className="next" type="button" onClick={() => setStep(step + 1)}>Siguiente</button>
-        </div>}
-        {step === 3 && <div className="step3-confirm">
           <button type="submit" className="next">Siguiente pregunta</button>
           <button
             type="button"

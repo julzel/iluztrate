@@ -5,4 +5,15 @@
   max-width: 414px;
   margin: 0 auto;
   background-image: url('../../assets/logo_pattern.png');
+
+  .next {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    color: white;
+    display: block;
+    font-size: 18px;
+    height: 36px;
+    width: 100%;
+    margin: 0 auto;
+  }
 }

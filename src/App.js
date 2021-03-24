@@ -13,11 +13,12 @@ import Layout from './components/layout';
 import './styles/global.scss';
 import NewGame from './pages/newGame';
 import MyGames from './pages/myGames';
+import GamePlay from './pages/gamePlay';
 
 const App = () => {
 
   useEffect(() => {
-    sessionStorage.setItem('authUser', JSON.stringify(DEFAULT_USER));
+    localStorage.setItem('authUser', JSON.stringify(DEFAULT_USER));
   }, [])
 
   return (
@@ -28,7 +29,8 @@ const App = () => {
             <Route exact path="/" component={Login} />
             <Route exact path="/home" component={Home} />
             <Route exact path="/nuevo-juego" component={NewGame} />
-            <Route exact path="/mis-juegos" component={MyGames} />
+            <Route path="/mis-juegos" component={MyGames} />
+            <Route path="/jugar" component={GamePlay} />
             <Redirect to="/" />
           </Switch>
         </Layout>
