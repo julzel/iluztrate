@@ -1,0 +1,12 @@
+.game {
+  background-color: #0f8b8d;
+  animation: transition-color 250ms ease-out forwards;
+  height: calc(100% - 80px);
+  overflow: hidden;
+}
+
+@keyframes transition-color {
+  to {
+    background-color: #126168;
+  }
+}
