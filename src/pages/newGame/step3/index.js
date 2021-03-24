@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 
@@ -71,9 +71,6 @@ const Step3 = ({ onNext }) => {
     createQuestion();
   }
 
-  useEffect(() => console.log(question), [question])
-
-
   return (
     <div className="step step3">
       <form onSubmit={onFormSubmit}>
@@ -131,13 +128,6 @@ const Step3 = ({ onNext }) => {
           </button>
         </div>}
       </form>
-      {/* <div className="all-questions">
-        <ul>
-          {questions.map((q) => (
-            <li>{q.question}</li>
-          ))}
-        </ul>
-      </div> */}
     </div>
   );
 };
