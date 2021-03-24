@@ -4,7 +4,9 @@ import './MyGames.scss';
 
 const MyGames = () => {
   return (
-    <div className="my-games"></div>
+    <div className="my-games">
+      mis juegos
+    </div>
   );
 }
  

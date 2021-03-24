@@ -3,6 +3,7 @@
   flex-flow: column;
   height: 100%;
   transition: background-color 250ms ease-out;
+  overflow: hidden;
 }
 
 .step {
@@ -42,8 +43,7 @@
     width: 100%;
   }
 
-  textarea,
-  input {
+  textarea {
     background-color: transparent;
     border: none;
     color: white;

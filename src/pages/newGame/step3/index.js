@@ -89,7 +89,7 @@ const Step3 = ({ onNext }) => {
         </div>}
         {step === 1 && <div className="step3-options">
           <p>Agrega las opciones</p>
-          <div>
+          <div className="step3-options-grid">
             {optionsRefs.map((option, i) => (
               <div className={`option option-${i}`} key={`option${i}`}>
                 <ImageUploader

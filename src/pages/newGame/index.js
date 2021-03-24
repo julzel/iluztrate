@@ -39,7 +39,7 @@ const NewGame = () => {
     newGame.questions = questions;
     setNewGame({ ...newGame });
     if (final) {
-      let games = JSON.parse(sessionStorage.getItem('gamesList'));
+      let games = JSON.parse(sessionStorage.getItem('games'));
       if (games) {
         games.push(newGame)
       } else {
@@ -50,13 +50,15 @@ const NewGame = () => {
     }
   }
 
+  const onStartOver = () => setCurrentStep(0);
+
   return (
     <div className="new-game" style={{ backgroundColor: COLORS[currentStep]}}>
       <Header />
       {currentStep === 0 && <Step1 onNext={onStep1Next} />}
       {currentStep === 1 && <Step2 onNext={onStep2Next} />}
       {currentStep === 2 && <Step3 onNext={onStep3Next} />}
-      {currentStep === 3 && <Step4 gameReview={newGame} />}
+      {currentStep === 3 && <Step4 startOver={onStartOver} gameReview={newGame} />}
     </div>
   );
 }
