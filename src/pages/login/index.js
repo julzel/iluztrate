@@ -15,7 +15,7 @@ const Login = ({ history }) => {
     ev.preventDefault();
     const authUser = JSON.parse(localStorage.getItem('authUser'));
     if (email === authUser.email && password === authUser.password) {
-      history.push('/home')
+      history.push('/inicio')
     }
   };
 

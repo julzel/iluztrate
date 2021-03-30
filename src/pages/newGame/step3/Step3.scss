@@ -15,41 +15,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
-    }
-
-    .option {
-      height: 42.579vw;
-      max-height: 175px;
-      width: 42.579vw;
-      max-width: 175px;
-      margin: 2vw 0;
-      position: relative;
-      border: 5px solid rgba(0, 0, 0, 0.2);
-
-      .image-uploader {
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 3;
-      }
-
-      img {
-        z-index: 2;
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 100%;
-      }
-
-      i {
-        color: rgba(0, 0, 0, 0.2);
-        z-index: 1;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        font-size: clamp(10px, 15vw, 62px);
-      }
+      margin: 2.6vw 0;
     }
   }
 

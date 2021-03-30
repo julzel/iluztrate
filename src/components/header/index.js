@@ -9,7 +9,7 @@ import ColorLogo from '../../assets/logo_colores.svg';
 const Header = ({ colorLogo, history }) => {
   return (
     <header className={`header${colorLogo ? ' no-bg' : ''}`}>
-      <div className="header-logo" onClick={() => history.push('/home')}>
+      <div className="header-logo" onClick={() => history.push('/inicio')}>
         <Svg src={colorLogo ? ColorLogo : Logo} />
       </div>
       <div className="header-menu-icon">

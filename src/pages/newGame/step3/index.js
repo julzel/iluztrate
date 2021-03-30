@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
+import QuestionAnswerOptions from "../../../components/questionAnswerOptions";
 
-import ImageUploader from "../../../components/imageUploader";
 import "./Step3.scss";
 
 const FINAL_QUESTION = true;
@@ -18,7 +18,7 @@ const options = [
 const defaultOption = options[0];
 
 const newQuestionDefault = {
-  question: '',
+  question: "",
   answerOptions: [],
   time: 15,
 };
@@ -38,7 +38,7 @@ const Step3 = ({ onNext }) => {
     setQuestion({ ...question });
   };
 
-  const createQuestion = finalQuestion => {
+  const createQuestion = (finalQuestion) => {
     newQuestionDefault.answerOptions = [];
     questions.push(question);
     setQuestions([...questions]);
@@ -53,77 +53,106 @@ const Step3 = ({ onNext }) => {
     );
   };
 
-  const onOptionChange = (ev, option) => {
+  const onOptionChange = (ev, option, index) => {
     const optionImgSrc = URL.createObjectURL(ev.target.files[0]);
     option.current.src = optionImgSrc;
     option.current.style.opacity = 1;
-    question.answerOptions.push(optionImgSrc);
+    if (question.answerOptions[index]) {
+      question.answerOptions[index].src = optionImgSrc;
+    } else {
+      question.answerOptions[index] = { src: optionImgSrc };
+    }
     setQuestion({ ...question });
   };
 
-  const onTimeSelect = selectedOption => {
+  const onCorrectAnswerCheck = (ev, index) => {
+    question.answerOptions.forEach((option) => (option.correctAnswer = false));
+    if (question.answerOptions[index]) {
+      question.answerOptions[index].correctAnswer = ev.target.checked;
+    } else {
+      question.answerOptions[index] = { correctAnswer: ev.target.checked };
+    }
+    setQuestion({ ...question });
+  };
+
+  const onTimeSelect = (selectedOption) => {
     question.time = selectedOption.value;
     setQuestion({ ...question });
-  }
+  };
 
-  const onFormSubmit = ev => {
+  const onFormSubmit = (ev) => {
     ev.preventDefault();
     createQuestion();
-  }
+  };
 
   return (
     <div className="step step3">
       <form onSubmit={onFormSubmit}>
-        {step === 0 && <div className="step3-question">
-          <textarea
-            rows="5"
-            type="text"
-            onChange={onQuestionChange}
-            value={question.question}
-            placeholder={`Pregunta ${questions.length + 1}`}
-          />
-          <button className="next" type="button" onClick={() => setStep(step + 1)}>Siguiente</button>
-        </div>}
-        {step === 1 && <div className="step3-options">
-          <p>Agrega las opciones</p>
-          <div className="step3-options-grid">
-            {optionsRefs.map((option, i) => (
-              <div className={`option option-${i}`} key={`option${i}`}>
-                <ImageUploader
-                  id={`option${i}`}
-                  onFileUpload={(ev) => onOptionChange(ev, option)}
-                />
-                <i className="fa fa-image" />
-                <img
-                  src={null}
-                  alt={`respuesta ${i + 1}`}
-                  ref={option}
-                  style={{ opacity: 0 }}
-                />
-              </div>
-            ))}
+        {step === 0 && (
+          <div className="step3-question">
+            <textarea
+              rows="5"
+              type="text"
+              onChange={onQuestionChange}
+              value={question.question}
+              placeholder={`Pregunta ${questions.length + 1}`}
+            />
+            <button
+              className="next"
+              type="button"
+              onClick={() => setStep(step + 1)}
+            >
+              Siguiente
+            </button>
           </div>
-          <button className="next" type="button" onClick={() => setStep(step + 1)}>Siguiente</button>
-        </div>}
-        {step === 2 && <div className="step3-select">
-          <p>Asígnale un tiempo máximo</p>
-          <Dropdown
-            controlClassName='myClassName'
-            placeholderClassName='myPlaceholderClassName'
-            options={options}
-            onChange={onTimeSelect}
-            value={defaultOption}
-            placeholder="Selecciona el tiempo"
-          />
-          <button type="submit" className="next">Siguiente pregunta</button>
-          <button
-            type="button"
-            className="next"
-            onClick={() => createQuestion(FINAL_QUESTION)}
-          >
-            Finalizar
-          </button>
-        </div>}
+        )}
+        {step === 1 && (
+          <div className="step3-options">
+            <p>Agrega las opciones</p>
+            <div className="step3-options-grid">
+              {optionsRefs.map((option, i) => (
+                <QuestionAnswerOptions
+                  option={option}
+                  question={question}
+                  onOptionChange={onOptionChange}
+                  onCorrectAnswerCheck={onCorrectAnswerCheck}
+                  index={i}
+                  key={`option-${i}`}
+                />
+              ))}
+            </div>
+            <button
+              className="next"
+              type="button"
+              onClick={() => setStep(step + 1)}
+            >
+              Siguiente
+            </button>
+          </div>
+        )}
+        {step === 2 && (
+          <div className="step3-select">
+            <p>Asígnale un tiempo máximo</p>
+            <Dropdown
+              controlClassName="myClassName"
+              placeholderClassName="myPlaceholderClassName"
+              options={options}
+              onChange={onTimeSelect}
+              value={defaultOption}
+              placeholder="Selecciona el tiempo"
+            />
+            <button type="submit" className="next">
+              Siguiente pregunta
+            </button>
+            <button
+              type="button"
+              className="next"
+              onClick={() => createQuestion(FINAL_QUESTION)}
+            >
+              Finalizar
+            </button>
+          </div>
+        )}
       </form>
     </div>
   );

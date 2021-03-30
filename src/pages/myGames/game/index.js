@@ -7,8 +7,6 @@ import './Game.scss';
 const Game = ({ history, game }) => {
   const goBack = () => history.goBack();
 
-  console.log(game)
-
   return (
     <div className="game">
       <Summary goBack={goBack} gameReview={game} />

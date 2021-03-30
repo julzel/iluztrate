@@ -7,7 +7,6 @@ const Summary = ({ gameReview, history, startOver, goBack }) => {
   const playGame = () => {
     localStorage.setItem('gameToPlay', JSON.stringify(gameReview))
     window.open('/jugar', '/blank');
-    // console.log(window.location.pathname);
   }
 
   return (
@@ -26,13 +25,13 @@ const Summary = ({ gameReview, history, startOver, goBack }) => {
       <div className="questions">
         {gameReview.questions.questions.map((question, i) => (
           <div key={`question_${i}`}>
-            <p>{question.question}</p>
-            <p className="time"><i className="fa fa-clock" />{question.time} segundos</p>
+            <p>{i+1}. {question.question}</p>
             <div className="summary-options-grid">
               {question.answerOptions.map((option, j) => (
-                <img key={`image-${j}`} src={option} alt="respuesta" />
+                <img key={`image-${j}`} src={option.src} alt="respuesta" className={`option-image ${option.correctAnswer ? ' selected' : ''}`} />
               ))}
             </div>
+            <p className="time"><i className="fa fa-clock" />{question.time} segundos</p>
           </div>
         ))}
       </div>
