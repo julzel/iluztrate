@@ -39,7 +39,7 @@ const GamePlay = ({ history }) => {
   useEffect(() => {
     if(!startCounting) {
       setTimeLeft(game.questions.questions[currentQuestion].time);
-      setStartCounting(true);
+      setTimeout(() => setStartCounting(true), 5000)
     } else {
       count()
     }
@@ -63,14 +63,14 @@ const GamePlay = ({ history }) => {
             <div className="board-view" style={{ display: currentQuestion === i ? 'flex' : 'none' }} key={`question-${i}`}>
               {!displayOutro && (
                 <div className="center">
-                  <div className="timer">{timeLeft}</div>
+                  {startCounting && <div className="timer">{timeLeft}</div>}
                   <p>{question.question}</p>
                   {timeLeft === 0 && currentQuestion < game.questions.questions.length - 1 && (
                     <button className="next" onClick={handleOnNextQuestion}>Siguiente pregunta</button>
                   )}
                 </div>
               )}
-              {!displayOutro && question.answerOptions.map((option, j) => (
+              {!displayOutro && startCounting && question.answerOptions.map((option, j) => (
                 <div className="board-option" key={`option-${j}`}>
                   <div
                     className="option-circle"

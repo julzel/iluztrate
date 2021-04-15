@@ -9,6 +9,10 @@
   justify-content: center;
   flex-flow: column;
 
+  h1, h2 {
+    color: rgb(21, 21, 21);
+  }
+
   h1 {
     font-size: 75px;
     margin-bottom: 50px;
@@ -21,5 +25,9 @@
 
   .next {
     margin-top: 25px;
+  }
+
+  .next {
+    background-color: rgb(21, 21, 21);
   }
 }

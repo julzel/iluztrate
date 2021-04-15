@@ -4,6 +4,7 @@
   width: 100%;
   left: 0;
   top: 0;
+  color: rgb(21, 21, 21);
   background-color: #212121;
 
   display: flex;
@@ -34,11 +35,15 @@
       color: #414141;
 
       .center {
-        font-size: 38px;
+        font-size: clamp(18px, 2.97vw, 38px);
         position: absolute;
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
 
         .timer {
           color: black;
@@ -51,6 +56,8 @@
         p {
           color: black;
           margin-bottom: 40px;
+          width: 70%;
+          text-align: center;
         }
       }
 
@@ -60,10 +67,16 @@
         justify-content: center;
         width: 50%;
         height: 50%;
+        animation: fade-in-from-center 500ms ease-out forwards;
+        opacity: 0;
+        transform: scale(0);
+        transform-origin: center center;
 
         .option-circle {
-          width: 13vw;
-          height: 13vw;
+          height: 20vw;
+          max-height: 256px;
+          width: 20vw;
+          max-width: 256px;
           border-radius: 50%;
 
           img {
@@ -75,5 +88,12 @@
         }
       }
     }
+  }
+}
+
+@keyframes fade-in-from-center {
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }
