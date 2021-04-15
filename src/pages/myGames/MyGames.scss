@@ -3,14 +3,56 @@
   height: 100%;
   overflow: hidden;
 
+  &-search {
+    padding: 20px;
+    position: relative;
+
+    input[type="text"] {
+      border: none;
+      width: 100%;
+      height: 36px;
+      background-color: rgba(21, 21, 21, 0.5);
+      padding-left: 8px;
+
+      &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        font-size: 16px;
+        color: white;
+        opacity: 0.4;
+      }
+      &::-moz-placeholder { /* Firefox 19+ */
+        font-size: 16px;
+        color: white;
+        opacity: 0.4;
+      }
+      &:-ms-input-placeholder { /* IE 10+ */
+        font-size: 16px;
+        color: white;
+        opacity: 0.4;
+      }
+      &:-moz-placeholder { /* Firefox 18- */
+        font-size: 16px;
+        color: white;
+        opacity: 0.4;
+      }
+    }
+
+    .fa-search {
+      color: white;
+      position: absolute;
+      right: 28px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
   &-list {
     height: calc(100% - 70px);
     display: flex;
     flex-flow: column;
     display: flex;
     align-items: center;
-    justify-content: center;
     overflow: scroll;
+    margin-top: 20px;
     padding: 0 20px;
 
     li {
@@ -18,7 +60,7 @@
       display: flex;
       align-items: center;
       margin-bottom: 15px;
-      background-color: rgba(21, 21, 21, 0.2);
+      background-color: rgba(21, 21, 21, 0.1);
       width: 100%;
       height: 36px;
       padding: 0 10px;
@@ -45,7 +87,7 @@
 
   .empty-list {
     color: white;
-    font-size: 28px;
+    font-size: 25px;
     height: calc(100% - 70px);
     display: flex;
     flex-flow: column;
@@ -62,7 +104,7 @@
 
     span {
       display: block;
-      margin-bottom: 40px;
+      margin-bottom: 60px;
     }
   }
 }

@@ -7,6 +7,7 @@ import Game from "./game";
 import "./MyGames.scss";
 
 const MyGames = ({ history }) => {
+  const [searchValue, setSearchValue] = useState('');
   const [selectedGame, setSelectedGame] = useState(null);
   const [games, setGames] = useState(JSON.parse(localStorage.getItem("games")));
   const { path, url } = useRouteMatch();
@@ -23,6 +24,12 @@ const MyGames = ({ history }) => {
       <Header />
       <Switch>
         <Route exact path={path}>
+        {(games && games.length > 0) && (
+          <div className="my-games-search">
+            <input placeholder="buscar por nombre" type="text" value={searchValue} onChange={e => setSearchValue(e.target.value)} />
+            <i className="fas fa-search"></i>
+          </div>
+        )}
           {(games && games.length > 0) && <ul className="my-games-list">
             {games && games.map((game, k) => (
               <li key={`link-${k}`}>
