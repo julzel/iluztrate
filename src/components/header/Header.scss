@@ -1,5 +1,5 @@
 .header {
-  height: 80px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -12,8 +12,8 @@
   }
 
   &-logo {
-    height: 42px;
-    width: 42px;
+    height: 40px;
+    width: 40px;
     display: flex;
     align-items: center;
 
@@ -25,6 +25,6 @@
 
   &-menu-icon {
     color: white;
-    font-size: 30px;
+    font-size: 25px;
   }
 }

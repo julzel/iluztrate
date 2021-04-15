@@ -4,7 +4,7 @@
   overflow: hidden;
 
   &-list {
-    height: calc(100% - 80px);
+    height: calc(100% - 70px);
     display: flex;
     flex-flow: column;
     display: flex;
@@ -45,18 +45,24 @@
 
   .empty-list {
     color: white;
-    font-size: 18px;
-    height: calc(100% - 80px);
+    font-size: 28px;
+    height: calc(100% - 70px);
     display: flex;
     flex-flow: column;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 20px;
+    text-align: center;
 
     i {
       font-size: 60px;
       margin-bottom: 20px;
+    }
+
+    span {
+      display: block;
+      margin-bottom: 40px;
     }
   }
 }

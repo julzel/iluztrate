@@ -63,11 +63,20 @@ const GamePlay = ({ history }) => {
             <div className="board-view" style={{ display: currentQuestion === i ? 'flex' : 'none' }} key={`question-${i}`}>
               {!displayOutro && (
                 <div className="center">
-                  {startCounting && <div className="timer">{timeLeft}</div>}
+                  <div
+                    className="timer"
+                    style={{ opacity: startCounting ? '1' : '0' }}
+                  >
+                    {timeLeft}
+                  </div>
                   <p>{question.question}</p>
-                  {timeLeft === 0 && currentQuestion < game.questions.questions.length - 1 && (
-                    <button className="next" onClick={handleOnNextQuestion}>Siguiente pregunta</button>
-                  )}
+                    <button
+                      className="next"
+                      onClick={handleOnNextQuestion}
+                      style={{ opacity: timeLeft === 0 && currentQuestion < game.questions.questions.length - 1 ? '1' : '0' }}
+                    >
+                      Siguiente
+                    </button>
                 </div>
               )}
               {!displayOutro && startCounting && question.answerOptions.map((option, j) => (

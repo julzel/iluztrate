@@ -39,7 +39,8 @@ const MyGames = ({ history }) => {
           {(!games || games.length === 0) && (
             <p className="empty-list">
               <i className="fas fa-book" />
-              Librería de juegos vacía
+              <span>No has creado ningún juego todavía</span>
+              <button className="next" onClick={() => history.push('/nuevo-juego')}>Crear juego</button>
             </p>
           )}
         </Route>
