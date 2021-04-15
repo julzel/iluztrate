@@ -1,8 +1,17 @@
 .home {
+  padding-top: 80px;
   display: flex;
   flex-flow: column;
   height: 100%;
   overflow: scroll;
+
+  .header {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 2;
+  }
 
   .container {
     padding: 20px;
