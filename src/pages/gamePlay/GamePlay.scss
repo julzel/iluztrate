@@ -30,8 +30,8 @@
       position: absolute;
       left: 0;
       top: 0;
-      background-color: yellowgreen;
       color: white;
+      color: #414141;
 
       .center {
         font-size: 38px;
@@ -62,15 +62,15 @@
         height: 50%;
 
         .option-circle {
-          width: 15vw;
-          height: 15vw;
+          width: 13vw;
+          height: 13vw;
           border-radius: 50%;
 
           img {
             width: 100%;
             height: 100%;
             border-radius: 50%;
-            transition: opacity 1000ms ease-out;
+            transition: opacity 1000ms ease-out, transform 350ms ease-in 900ms;
           }
         }
       }

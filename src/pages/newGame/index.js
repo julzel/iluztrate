@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { v4 as uuidv4 } from 'uuid';
 
 import Header from '../../components/header';
 import Step1 from './step1';
@@ -11,6 +11,7 @@ import Step4 from './step4';
 const COLORS = ["#ec9a29", "#7e935b", "#a8201a", "#ca5d22"];
 
 const newGameDefault = {
+  id: null,
   name: '',
   categories: [],
   questions: {
@@ -36,6 +37,7 @@ const NewGame = () => {
   }
 
   const onStep3Next = (questions, final) => {
+    newGame.id = uuidv4();
     newGame.questions = questions;
     setNewGame({ ...newGame });
     if (final) {

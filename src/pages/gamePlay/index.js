@@ -51,7 +51,7 @@ const GamePlay = ({ history }) => {
     // then waits 5 seconds to display
     // the end of the game
     if (timeLeft === 1 && currentQuestion === game.questions.questions.length - 1) {
-      setTimeout(() => setDisplayOutro(true), 5000);
+      setTimeout(() => setDisplayOutro(true), 10000);
     }    
   }, [timeLeft, currentQuestion, game])
 
@@ -81,6 +81,7 @@ const GamePlay = ({ history }) => {
                       alt="respuesta"
                       style={{
                         opacity: hideOptions && !option.correctAnswer ? 0 : 1,
+                        transform: hideOptions && option.correctAnswer ? 'scale(1.25)' : 'scale(1)'
                       }}
                     />
                   </div>

@@ -5,6 +5,7 @@
   max-width: 414px;
   margin: 0 auto;
   background-image: url('../../assets/logo_pattern.png');
+  overflow: hidden;
 
   .next {
     background-color: rgba(0, 0, 0, 0.1);
@@ -15,5 +16,9 @@
     height: 36px;
     width: 100%;
     margin: 0 auto;
+
+    &:disabled {
+      opacity: 0.2;
+    }
   }
 }

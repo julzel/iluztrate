@@ -8,11 +8,10 @@ import "./Step3.scss";
 const FINAL_QUESTION = true;
 
 const options = [
+  { value: 5, label: "5 segundos" },
+  { value: 10, label: "10 segundos" },
   { value: 15, label: "15 segundos" },
-  { value: 20, label: "20 segundos" },
-  { value: 30, label: "30 segundos" },
-  { value: 45, label: "45 segundos" },
-  { value: 60, label: "1 minuto" },
+  { value: 20, label: "20 segundos" }
 ];
 
 const defaultOption = options[0];
@@ -101,6 +100,7 @@ const Step3 = ({ onNext }) => {
               className="next"
               type="button"
               onClick={() => setStep(step + 1)}
+              disabled={!question.question || question.question === ''}
             >
               Siguiente
             </button>
@@ -120,11 +120,16 @@ const Step3 = ({ onNext }) => {
                   key={`option-${i}`}
                 />
               ))}
+              <div className="instruction">
+                <i className="far fa-check-square" />&nbsp;&nbsp;&nbsp;
+                <span>Recuerda marcar la respuesta correcta</span>
+              </div>
             </div>
             <button
               className="next"
               type="button"
               onClick={() => setStep(step + 1)}
+              disabled={question.answerOptions.length < 4}
             >
               Siguiente
             </button>
